@@ -2,3 +2,7 @@
     display: flex;
     gap: 150px;
 }
+
+#beforePosition{
+    margin-top: 2vh;
+}

@@ -11,12 +11,15 @@ document.body.addEventListener ("keyup", (event) => {
         let text = stringSeparation.value
         let word = stringSeparationPosition.value
 
-	if (event.key === "Enter" && beforePosition.checked) {       
+         if(event.key === "Enter" && text.indexOf(word) === -1) { 
+                resultFirstPart.innerHTML = `Wort nicht gefunden`}
+                else if (event.key === "Enter" && beforePosition.checked) {       
         resultFirstPart.innerHTML = `${text.substring(0,text.indexOf(word))}`
         resultSecondPart.innerHTML = `${text.substring(text.indexOf(word))}`} 
+        
         else if(event.key === "Enter" && afterPosition.checked){
         resultFirstPart.innerHTML = `${text.substring(0,text.indexOf(word))+word}`
         resultSecondPart.innerHTML = `${text.substring(text.indexOf(word)).replace(word,"")}`
-        } else if(event.key === "Enter" && text.indexOf(word) === -1) { resultFirstPart.innerHTML = `Wort nicht gefunden`
-        }
+        } 
+        
 });
